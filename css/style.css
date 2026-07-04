@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/* =========================
+VARIABLES (GLOBAL)
+========================= */
+:root{
+  --primary:#c9a86a;   /* doré luxe */
+  --dark:#111;
+  --light:#f7f7f7;
+  --gray:#777;
+}
 /* =========================
 RESET
 ========================= */

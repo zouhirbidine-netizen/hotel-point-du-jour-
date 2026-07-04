@@ -3,7 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Hotel Point Du Jour</title>
+
+    <!-- 🔥 GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -11,7 +18,8 @@
 
 <!-- ================= HEADER ================= -->
 <header>
-    <div class="container">
+    <div class="container header-container">
+
         <div class="logo">
             <h2>POINT DU JOUR</h2>
         </div>
@@ -22,17 +30,18 @@
                 <li><a href="chambres.html">Chambres</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="reservation.html" class="nav-btn">Réserver</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+
     </div>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
 
-    <div class="overlay">
+    <div class="hero-content">
         <h1>POINT DU JOUR</h1>
         <h2>Hôtel ★★ Casablanca</h2>
         <p>Votre confort au cœur de Casablanca</p>
@@ -45,17 +54,21 @@
 <!-- ================= ABOUT ================= -->
 <section class="about">
 
-    <div class="container">
+    <div class="container about-container">
 
         <div class="about-image">
-            <img src="image/hotel.jpg" alt="Hotel">
+            <img src="image/hotel.jpg" alt="Hotel Point Du Jour">
         </div>
 
         <div class="about-text">
             <h2>À propos de l'hôtel</h2>
             <p>
-                L’Hôtel Point Du Jour est situé au centre de Casablanca.
-                Nous offrons confort, propreté et un excellent service pour tous nos clients.
+                L’Hôtel Point Du Jour est situé au cœur de Casablanca.
+                Nous offrons un séjour confortable, propre et agréable pour tous nos clients.
+            </p>
+
+            <p>
+                Profitez de nos chambres modernes, service 24h/24 et un accueil chaleureux.
             </p>
         </div>
 
@@ -71,18 +84,21 @@
     <div class="cards">
 
         <div class="card">
-            <img src="image/chambre1.jpg">
+            <img src="image/chambre1.jpg" alt="Chambre Simple">
             <h3>Chambre Simple</h3>
+            <p>Confort et tranquillité</p>
         </div>
 
         <div class="card">
-            <img src="image/chambre2.jpg">
+            <img src="image/chambre2.jpg" alt="Chambre Double">
             <h3>Chambre Double</h3>
+            <p>Parfaite pour couple</p>
         </div>
 
         <div class="card">
-            <img src="image/suite.jpg">
+            <img src="image/suite.jpg" alt="Suite Luxe">
             <h3>Suite Luxe</h3>
+            <p>Expérience premium</p>
         </div>
 
     </div>
@@ -98,23 +114,48 @@
 
         <div class="card">
             <h3>WiFi Gratuit</h3>
+            <p>Internet haut débit</p>
         </div>
 
         <div class="card">
             <h3>Réception 24h/24</h3>
+            <p>Service continu</p>
         </div>
 
         <div class="card">
             <h3>Petit déjeuner</h3>
+            <p>Inclus chaque matin</p>
         </div>
 
     </div>
 
 </section>
 
+<!-- ================= CALL TO ACTION ================= -->
+<section class="cta">
+
+    <div class="cta-content">
+        <h2>Réservez votre séjour maintenant</h2>
+        <p>Meilleur prix garanti directement sur notre site</p>
+        <a href="reservation.html" class="btn">Réserver</a>
+    </div>
+
+</section>
+
 <!-- ================= FOOTER ================= -->
-<footer style="text-align:center; padding:30px; background:#111; color:white;">
-    <p>© 2026 Hotel Point Du Jour - Tous droits réservés</p>
+<footer>
+
+    <div class="footer-content">
+
+        <h3>Hotel Point Du Jour</h3>
+        <p>Casablanca, Maroc</p>
+
+        <p>Email : contact@pointdujour.com | Tél : +212 600 000 000</p>
+
+        <p class="copy">© 2026 Hotel Point Du Jour - Tous droits réservés</p>
+
+    </div>
+
 </footer>
 
 </body>
