@@ -3,63 +3,83 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Réservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - Hotel Point Du Jour</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="chambres.html">Chambres</a>
-        <a href="services.html">Services</a>
-        <a href="galerie.html">Galerie</a>
-        <a href="reservation.html">Réservation</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container header-container">
+        <h2 class="logo">POINT DU JOUR</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <section class="section">
 
     <h1>Réserver une chambre</h1>
 
-    <div class="card">
+    <div class="booking-box">
 
-    <h2>Réserver votre séjour</h2>
+        <form id="bookingForm">
 
-    <p>Choisissez une plateforme :</p>
+            <label>Nom complet</label>
+            <input type="text" id="name" required>
 
-    <div class="cards">
+            <label>Email</label>
+            <input type="email" id="email" required>
 
-    <a href="https://www.booking.com/hotel/ma/point-du-jour.fr.html" class="card" target="_blank">
+            <label>Date d'arrivée</label>
+            <input type="date" id="checkin" required>
+
+            <label>Date de départ</label>
+            <input type="date" id="checkout" required>
+
+            <label>Type de chambre</label>
+            <select id="room">
+                <option>Chambre Simple</option>
+                <option>Chambre Double</option>
+                <option>Suite Luxe</option>
+            </select>
+
+            <button type="submit" class="btn">Confirmer réservation</button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+</section>
+<div class="cards">
+
+    <a href="https://www.booking.com/hotel/ma/point-du-jour.fr.html" target="_blank" class="card">
         <h3>Booking</h3>
         <p>Réserver directement</p>
     </a>
 
-    <a href="https://www.trip.com/hotels/detail/?hotelId=10561290" class="card" target="_blank">
-        <h3>Trip.com</h3>
-        <p>Réserver sur Trip.com</p>
-    </a>
-
-    <a href="https://www.agoda.com/fr-fr/point-du-jour/hotel/casablanca-ma.html" class="card" target="_blank">
+    <a href="https://www.agoda.com/fr-fr/point-du-jour/hotel/casablanca-ma.html" target="_blank" class="card">
         <h3>Agoda</h3>
         <p>Comparer les prix</p>
     </a>
 
-    <a href="https://www.bluepillow.com/search/61828a779e3163a56a276921" class="card" target="_blank">
-        <h3>BluePillow</h3>
-        <p>Meilleures offres</p>
+    <a href="https://www.trip.com/hotels/detail/?hotelId=10561290" target="_blank" class="card">
+        <h3>Trip.com</h3>
+        <p>Réserver en ligne</p>
     </a>
-
 
 </div>
 
-</section>
-
-<footer>
-    <p>© Hotel Luxury</p>
-</footer>
+<script src="js/reservation.js"></script>
 
 </body>
 </html>

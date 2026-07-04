@@ -1,63 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 /* =========================
-VARIABLES (GLOBAL)
+GOOGLE FONTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+VARIABLES
 ========================= */
 :root{
-  --primary:#c9a86a;   /* doré luxe */
-  --dark:#111;
-  --light:#f7f7f7;
-  --gray:#777;
+    --primary:#c9a86a;
+    --dark:#111;
+    --light:#f6f6f6;
+    --gray:#777;
+    --white:#fff;
 }
+
 /* =========================
 RESET
 ========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
 }
 
 body{
-    background:#f6f6f6;
+    font-family:'Poppins', sans-serif;
+    background:var(--light);
     color:#333;
+    line-height:1.6;
+}
+
+/* TITRES LUXE */
+h1,h2,h3{
+    font-family:'Playfair Display', serif;
 }
 
 /* =========================
-HEADER
+CONTAINER
 ========================= */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
 
+/* =========================
+HEADER LUXE GLASS
+========================= */
 header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    background:rgba(0,0,0,0.75);
-    z-index:1000;
     padding:15px 0;
+    background:rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+    z-index:1000;
 }
 
-/* MENU */
+.header-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo h2{
+    color:var(--primary);
+    letter-spacing:2px;
+}
+
 nav ul{
     list-style:none;
     display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:25px;
-    margin:0;
-    padding:0;
+    gap:30px;
 }
 
 nav ul li a{
-    color:white;
+    color:var(--white);
     text-decoration:none;
-    font-size:16px;
+    font-weight:500;
     position:relative;
     transition:0.3s;
 }
 
-/* underline animation */
 nav ul li a::after{
     content:"";
     position:absolute;
@@ -65,26 +90,49 @@ nav ul li a::after{
     left:0;
     width:0;
     height:2px;
-    background:#d4af37;
+    background:var(--primary);
     transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:var(--primary);
 }
 
 nav ul li a:hover::after{
     width:100%;
 }
 
-/* =========================
-HERO
-========================= */
+.nav-btn{
+    background:var(--primary);
+    padding:8px 16px;
+    border-radius:25px;
+    color:white !important;
+}
 
+/* =========================
+MENU MOBILE
+========================= */
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:white;
+    position:absolute;
+    right:20px;
+    top:15px;
+    cursor:pointer;
+}
+
+/* =========================
+HERO LUXE
+========================= */
 .hero{
     height:100vh;
     background:url("../image/hotel.jpg") center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
     text-align:center;
+    position:relative;
 }
 
 .hero::before{
@@ -94,130 +142,101 @@ HERO
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.55);
 }
 
-.overlay{
+.hero-content{
     position:relative;
     z-index:2;
 }
 
-.overlay h1{
-    color:white;
+.hero h1{
     font-size:65px;
-    letter-spacing:5px;
+    color:white;
+    letter-spacing:4px;
 }
 
-.overlay h2{
-    color:#d4af37;
+.hero h2{
     font-size:28px;
+    color:var(--primary);
     margin-top:10px;
 }
 
-.overlay p{
+.hero p{
     color:white;
     margin:20px 0;
-    font-size:18px;
 }
 
 /* =========================
-BUTTON
+BUTTON LUXE
 ========================= */
-
 .btn{
-    background:linear-gradient(135deg,#d4af37,#b89227);
+    background:var(--primary);
     color:white;
     padding:14px 35px;
-    text-decoration:none;
     border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
     display:inline-block;
     transition:0.3s;
-    font-weight:bold;
 }
 
 .btn:hover{
+    background:#b89227;
     transform:scale(1.05);
 }
 
 /* =========================
 SECTIONS
 ========================= */
-
 .section{
     padding:100px 10%;
     text-align:center;
 }
 
 .section h1{
-    font-size:40px;
+    font-size:42px;
     margin-bottom:40px;
 }
 
 /* =========================
-CARDS
+CARDS LUXE
 ========================= */
-
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:20px;
-    margin-top:30px;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:25px;
 }
 
 .card{
     background:white;
-    padding:25px;
     border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    text-align:center;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
     transition:0.3s;
+    text-align:center;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
 .card img{
     width:100%;
-    border-radius:10px;
-    margin-bottom:10px;
-}
-
-.card h3{
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
     margin-bottom:10px;
 }
 
 .card p{
-    color:#666;
+    color:var(--gray);
 }
 
 /* =========================
-GALLERY
+ABOUT LUXE
 ========================= */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-    gap:15px;
-}
-
-.gallery img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:0.4s;
-}
-
-.gallery img:hover{
-    transform:scale(1.08);
-}
-
-/* =========================
-ABOUT
-========================= */
-
 .about{
     padding:100px 10%;
     background:white;
@@ -225,44 +244,190 @@ ABOUT
 
 .about .container{
     display:flex;
-    gap:40px;
+    gap:50px;
     align-items:center;
     flex-wrap:wrap;
 }
 
-.about img{
-    width:100%;
-    border-radius:15px;
+/* =========================
+CTA LUXE
+========================= */
+.cta{
+    background:linear-gradient(135deg,#111,#222);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.cta h2{
+    font-size:32px;
+}
+
+.cta p{
+    color:#ccc;
+    margin:15px 0;
 }
 
 /* =========================
 FOOTER
 ========================= */
-
 footer{
     background:#111;
     color:white;
     text-align:center;
-    padding:20px;
-    margin-top:40px;
+    padding:30px;
+}
+
+.copy{
+    color:#aaa;
+    margin-top:10px;
 }
 
 /* =========================
 RESPONSIVE
 ========================= */
-
 @media(max-width:768px){
 
-    .overlay h1{
-        font-size:40px;
+    .menu-toggle{
+        display:block;
     }
 
     nav ul{
+        display:none;
         flex-direction:column;
-        gap:15px;
+        background:rgba(0,0,0,0.9);
+        position:absolute;
+        top:60px;
+        left:0;
+        width:100%;
+        padding:20px 0;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .header-container{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero h1{
+        font-size:38px;
     }
 
     .about .container{
         flex-direction:column;
     }
+}
+.booking-box{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.booking-box form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.booking-box input,
+.booking-box select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+}
+
+.booking-box label{
+    font-weight:600;
+    text-align:left;
+}
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.popup-content{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    width:90%;
+    max-width:400px;
+    text-align:center;
+    position:relative;
+    animation:fadeIn 0.3s ease;
+}
+
+.popup-content input,
+.popup-content select{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+@keyframes fadeIn{
+    from{transform:scale(0.8); opacity:0;}
+    to{transform:scale(1); opacity:1;}
+}
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup-content{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    width:90%;
+    max-width:400px;
+    text-align:center;
+    position:relative;
+}
+
+.popup-content input,
+.popup-content select{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:25px;
+    cursor:pointer;
 }

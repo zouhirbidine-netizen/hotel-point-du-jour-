@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hotel Point Du Jour</title>
+    <title>Hotel Point Du Jour | Casablanca</title>
 
-    <!-- 🔥 GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- SEO -->
+    <meta name="description" content="Hôtel Point Du Jour à Casablanca - confort, luxe et meilleur prix. Réservez votre séjour maintenant.">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -18,6 +21,10 @@
 
 <!-- ================= HEADER ================= -->
 <header>
+
+    <!-- MENU MOBILE -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
     <div class="container header-container">
 
         <div class="logo">
@@ -41,12 +48,12 @@
 <!-- ================= HERO ================= -->
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-content" data-aos="fade-up">
         <h1>POINT DU JOUR</h1>
         <h2>Hôtel ★★ Casablanca</h2>
         <p>Votre confort au cœur de Casablanca</p>
 
-        <a href="reservation.html" class="btn">Réserver maintenant</a>
+        <a href="#" class="btn" onclick="openPopup()">BOOK NOW</a>
     </div>
 
 </section>
@@ -56,11 +63,11 @@
 
     <div class="container about-container">
 
-        <div class="about-image">
+        <div class="about-image" data-aos="fade-right">
             <img src="image/hotel.jpg" alt="Hotel Point Du Jour">
         </div>
 
-        <div class="about-text">
+        <div class="about-text" data-aos="fade-left">
             <h2>À propos de l'hôtel</h2>
             <p>
                 L’Hôtel Point Du Jour est situé au cœur de Casablanca.
@@ -83,19 +90,19 @@
 
     <div class="cards">
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
             <img src="image/chambre1.jpg" alt="Chambre Simple">
             <h3>Chambre Simple</h3>
             <p>Confort et tranquillité</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
             <img src="image/chambre2.jpg" alt="Chambre Double">
             <h3>Chambre Double</h3>
             <p>Parfaite pour couple</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="fade-up">
             <img src="image/suite.jpg" alt="Suite Luxe">
             <h3>Suite Luxe</h3>
             <p>Expérience premium</p>
@@ -112,17 +119,17 @@
 
     <div class="cards">
 
-        <div class="card">
+        <div class="card" data-aos="zoom-in">
             <h3>WiFi Gratuit</h3>
             <p>Internet haut débit</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="zoom-in">
             <h3>Réception 24h/24</h3>
             <p>Service continu</p>
         </div>
 
-        <div class="card">
+        <div class="card" data-aos="zoom-in">
             <h3>Petit déjeuner</h3>
             <p>Inclus chaque matin</p>
         </div>
@@ -131,12 +138,12 @@
 
 </section>
 
-<!-- ================= CALL TO ACTION ================= -->
+<!-- ================= CTA ================= -->
 <section class="cta">
 
     <div class="cta-content">
         <h2>Réservez votre séjour maintenant</h2>
-        <p>Meilleur prix garanti directement sur notre site</p>
+        <p>Meilleur prix garanti directement sur notre site officiel</p>
         <a href="reservation.html" class="btn">Réserver</a>
     </div>
 
@@ -158,5 +165,48 @@
 
 </footer>
 
+<!-- JS MENU -->
+<script>
+function toggleMenu(){
+    document.querySelector("nav ul").classList.toggle("active");
+}
+</script>
+
+<!-- AOS ANIMATION -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+<div id="bookingPopup" class="popup">
+
+    <div class="popup-content">
+
+        <span class="close" onclick="closePopup()">&times;</span>
+
+        <h2>Réservation rapide</h2>
+
+        <form id="popupForm">
+
+            <input type="text" placeholder="Nom complet" required>
+            <input type="email" placeholder="Email" required>
+
+            <input type="date" required>
+            <input type="date" required>
+
+            <select>
+                <option>Chambre Simple</option>
+                <option>Chambre Double</option>
+                <option>Suite Luxe</option>
+            </select>
+
+            <button type="submit" class="btn">Confirmer</button>
+
+        </form>
+
+    </div>
+
+</div>
+ 
 </body>
 </html>
